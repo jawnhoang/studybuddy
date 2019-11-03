@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+      
+      <div class="section-content">
+        <h2>Find students near you.</h2>
+        <a href="#" class="btn-primary">Sign up</a>
+        <a href="{{ url_for('about') }}" type ="button" class="btn-secondary">Learn more</a>
+        <a href="{{ url_for('location') }}" type="button" class="btn-secondary">Your location</a>
+         
+      </div>
+
+      <div class="section-device">
+        <img src="static/img/studying.png">
+      </div>
+      
+      <div class="clearfix"></div>
+
+    </div>
+  </main>
+{% endblock %}
