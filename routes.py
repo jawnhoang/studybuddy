@@ -4,15 +4,16 @@ import MySQLdb.cursors
 import re
 
 app = Flask(__name__)
-
+# Intialize MySQL
+app.secret_key = 'studybuddy'
+mysql = MySQL(app)
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'pythonlogin'
 
-# Intialize MySQL
-mysql = MySQL(app)
+
 
 @app.route("/")
 def index():
@@ -47,13 +48,36 @@ def login():
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
+            session['password'] = account['password']
             # Redirect to home page
-            return 'Logged in successfully!'
+            return redirect(url_for('loginScreen'))
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
     # Show the login form with message (if any)
     return render_template('login.html', msg = msg)
+
+@app.route("/pythonlogin/loginScreen")
+def loginScreen():
+        # Check if user is loggedin
+    if 'loggedin' in session:
+        # User is loggedin show them the home page
+        return render_template('loginScreen.html', username=session['username'])
+    # User is not loggedin redirect to login page
+    return redirect(url_for('login'))
+
+@app.route('/pythonlogin/logout')
+def logout():
+    # Remove session data, this will log the user out
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('username', None)
+   # Redirect to login page
+   return redirect(url_for('login'))
+#todo:
+# render template for logout.html
+# log out leads to logout page saying "logged out. log back in?" button
+# click and redirects to login screen
 
 
 @app.route('/pythonlogin/register', methods=['GET', 'POST'])
@@ -68,7 +92,7 @@ def register():
         email = request.form['email']
                 # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = %s', (username))
+        cursor.execute('SELECT * FROM accounts WHERE username = %s', [username])
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
