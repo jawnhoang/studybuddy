@@ -17,7 +17,7 @@ How to use the application:
 Features: 
 
   -Login: it is for existing customer to log in to the main page
-  -Logout: 
+  -Logout: When the customer want to log out, then they will be redirected to the homepage.
   -Register: For new customer to create new account
   -Location: we use google's api for geolocation in html5. We simply use the ip_address of the user with their consent in order to show them their location.
   -Block study buddy: the useres will have a list dedicated to keep some people away.
