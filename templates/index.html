@@ -6,10 +6,13 @@
       
       <div class="section-content">
         <h2>Find students near you.</h2>
-        <a href="#" class="btn-primary">Sign up</a>
-        <a href="{{ url_for('about') }}" type ="button" class="btn-secondary">Learn more</a>
-        <a href="{{ url_for('location') }}" type="button" class="btn-secondary">Your location</a>
-         
+       <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" button type="button" class="btn btn-primary">Sign up</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('about') }}"  button type="button" class="btn btn-secondary">Learn more</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('location') }}" button type="button" class="btn btn-secondary">Your location</a></li>
+        </ol>
+    </nav>
       </div>
 
       <div class="section-device">
@@ -21,3 +24,14 @@
     </div>
   </main>
 {% endblock %}
+
+
+
+
+ <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">a href="#" button type="button" class="btn btn-primary">Sign up</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('about') }}"  button type="button" class="btn btn-secondary">Learn more</a></li>
+            <li class="breadcrumb-item active"><a href="{{ url_for('location') }}" button type="button" class="btn btn-secondary">Your location</a></li>
+        </ol>
+    </nav>
