@@ -73,7 +73,7 @@ def logout():
    session.pop('id', None)
    session.pop('username', None)
    # Redirect to login page
-   return redirect(url_for('login'))
+   return render_template('logout.html')
 #todo:
 # render template for logout.html
 # log out leads to logout page saying "logged out. log back in?" button
