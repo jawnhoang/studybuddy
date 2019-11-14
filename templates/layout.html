@@ -3,16 +3,36 @@
   <head>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+
   </head>
-  <body>
+  <body body class="p-3 mb-2 bg-light text-dark">
     <header>
-      <div class="container">
+      <nav class = "navbar">
         <h1 class="title">Study Buddy</h1>
+        <div class = "navbar">
+          <a href="{{ url_for('index') }}" button type = "button" class ="btn btn-secondary">Home</a>
+				<a href="{{ url_for('loginScreen') }}"button type = "button" class ="btn btn-secondary">Profile</a>
+        <a href="{{ url_for('location') }}" button type="button" class="btn btn-secondary">Your location</a>
+        <a href="{{ url_for('chat') }}" button type="button" class="btn btn-secondary">chat</a>
+        <a href="{{ url_for('logout') }}" button type = "button" class ="btn btn-secondary">Logout</a>
+      </div>
+    </nav>
       </div>
     </header>
-    
+
     {% block content %}
     {% endblock %}
-    
+
   </body>
 </html>
