@@ -21,10 +21,13 @@ a {
 }
 
 #mapid { 
-	height: 300px;
-	width: 300px;		
+	height: 500px;
+	width: 500px;		
 	margin-left: 300px;
  }
 
-
-
+.chat_box{
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+}
