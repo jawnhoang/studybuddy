@@ -6,12 +6,13 @@
       
       <div class="section-content">
         <h2>Find students near you.</h2>
-
+        
        <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url_for('login')}}" button type="button" class="btn btn-primary">Sign up</a></li>
             <li class="breadcrumb-item"><a href="{{ url_for('about') }}"  button type="button" class="btn btn-secondary">Learn more</a></li>
             <li class="breadcrumb-item"><a href="{{ url_for('location') }}" button type="button" class="btn btn-secondary">Your location</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('chat') }}" button type="button" class="btn btn-secondary">chat</a></li>
         </ol>
     </nav>
 
@@ -21,19 +22,10 @@
         <img src="static/img/studying.png">
       </div>
       
-      <div class="clearfix"></div>
+  
 
     </div>
   </main>
 {% endblock %}
 
 
-
-
- <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">a href="#" button type="button" class="btn btn-primary">Sign up</a></li>
-            <li class="breadcrumb-item"><a href="{{ url_for('about') }}"  button type="button" class="btn btn-secondary">Learn more</a></li>
-            <li class="breadcrumb-item active"><a href="{{ url_for('location') }}" button type="button" class="btn btn-secondary">Your location</a></li>
-        </ol>
-    </nav>
