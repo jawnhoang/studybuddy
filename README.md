@@ -14,7 +14,8 @@
     2. Use the cd command to naviagte to the project directory
     3. once in the directory, use command python routes.py
     4. then using a browser open page with the url: http://127.0.0.1:5000/
-Features: 
+
+## Features: 
 
  - Login: it is for existing customer to log in to the main page
  - Logout: When the customer want to log out, then they will be redirected to the homepage.
