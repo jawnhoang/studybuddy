@@ -1,0 +1,14 @@
+1.which file, contains the hello user(dynamic)?
+	index.html
+
+2. where is the box where the user fills out username and password in sign in?
+	login.html
+2.1 where is form.usernmae.label?
+
+3. going to change index post, to ask the user for a course:
+
+	3.1 thinking of adding courseForm to forms.py
+	    check
+	3.2 validating course:
+
+	3.3 what is the difference between db.relationship and db.column?

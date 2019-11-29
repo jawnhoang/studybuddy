@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- current_user is a property of flask-login -->
+    <!-- this is seen after loging in -->
+    <title>Studdy_buddy</title>
+    <h1> Hello {{ current_user.username }}!</h1>
+<!--     
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %} 
+-->
+<p id="student_course">
+    {{ course_form.course.label }}<br>
+    {{ course_form.course(size=32) }}
+</p>
+<p id="Search">{{ course_form.submit() }}</p>  
+
+{% endblock %}
