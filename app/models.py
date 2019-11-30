@@ -10,7 +10,6 @@ class User(UserMixin, db.Model): # tables are made by making classes, inorder to
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     student_courses = db.Column(db.String(64), index=True, unique=False)
-    another_column = db.Column(db.String(64), index=True, unique=False)
     posts = db.relationship('Post', backref='author', lazy='dynamic') # lazy allows us to do operations a lot easier
     
 

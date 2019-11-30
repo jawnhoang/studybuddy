@@ -1,10 +1,8 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, session
 from app import app # from __init__.py
 from app import db # from __init__.py
 from app.forms import LoginForm
-
 from app.forms import CourseForm
-
 from app.forms import RegistrationForm
 from app.models import User
 from flask_login import current_user, login_user
@@ -12,28 +10,20 @@ from flask_login import logout_user
 from flask_login import login_required
 from flask import request
 from werkzeug.urls import url_parse
-#from app.models import User, Post
+from app.models import User, Post
 
-@app.route('/')
-@app.route('/index')
+
+@app.route('/', methods=["GET" ,"POST"])
+@app.route('/index', methods=["GET" ,"POST"])
 @login_required
 def index():
-    # posts = [
-    #     {
-    #         'author': {'username': 'John'},
-    #         'body': 'Beautiful day in Portland!'
-    #     },
-    #     {
-    #         'author': {'username': 'Susan'},
-    #         'body': 'The Avengers movie was so cool!'
-    #     }
-    # ]
     
-    course_form = CourseForm()
-    user_course = User(student_courses=course_form.student_courses.data)
-    db.session.add(user_course)
+    form = CourseForm()
+    update_course = User.query.filter_by(id=current_user.id).first()
+    update_course.student_courses = form.student_courses.data
     db.session.commit()
-    return render_template('index.html', title='User_Home',course_form=course_form )
+    flash('Looking for students with the same course')
+    return render_template('index.html', title='User_Home',form=form )
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

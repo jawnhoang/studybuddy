@@ -20,6 +20,7 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Register')
 
 class CourseForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
     student_courses = StringField('Courses interested in', validators=[DataRequired()])
     submit = SubmitField('Search')
 

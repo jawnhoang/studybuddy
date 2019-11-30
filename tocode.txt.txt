@@ -14,3 +14,4 @@
 	3.3 what is the difference between db.relationship and db.column?
 
 	3.4 make the databse receive post by user:
+		.does adding the metho[get post] to routes.py do anything?

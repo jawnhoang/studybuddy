@@ -10,10 +10,11 @@
     <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %} 
 -->
+<form action"{{ url_for('index' ) }}"  method="post">
 <p id="student_course">
-    {{ course_form.student_courses.label }}<br>
-    {{ course_form.student_courses(size=32) }}
-</p>
-<p id="Search">{{ course_form.submit() }}</p>  
+     {{ form.student_courses.label }}<br>
+     {{ form.student_courses(size=32) }}{{ form.submit() }}
 
+</p>  
+</form>
 {% endblock %}

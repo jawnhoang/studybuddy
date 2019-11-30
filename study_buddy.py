@@ -11,7 +11,7 @@ python .\study_buddy.py db migrate
  python .\study_buddy.py db upgrade
 """
 #if __name__ == "__main__":
- #    manager.run()
+#     manager.run()
 
 
 # if you want to run the server, use the command below
