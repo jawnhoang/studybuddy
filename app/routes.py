@@ -30,7 +30,7 @@ def index():
     # ]
     
     course_form = CourseForm()
-    user_course = User(course=course_form.course.data)
+    user_course = User(student_courses=course_form.student_courses.data)
     db.session.add(user_course)
     db.session.commit()
     return render_template('index.html', title='User_Home',course_form=course_form )

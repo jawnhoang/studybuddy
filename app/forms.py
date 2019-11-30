@@ -20,7 +20,7 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Register')
 
 class CourseForm(FlaskForm):
-    course = StringField('Courses interested in', validators=[DataRequired()])
+    student_courses = StringField('Courses interested in', validators=[DataRequired()])
     submit = SubmitField('Search')
 
 
@@ -29,10 +29,7 @@ class CourseForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please use a different username.')
 
-    def validate_coursename(self,student_course):
-        student = User.query.filter_by(course=course.data).first()
-        if user is not None:
-            raise ValidationError('Please use a different username.')
+    
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()

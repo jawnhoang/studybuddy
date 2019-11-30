@@ -9,7 +9,8 @@ class User(UserMixin, db.Model): # tables are made by making classes, inorder to
     username = db.Column(db.String(64), index=True, unique=True) # index=true is a type of optimization, usernames have to be unique
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    course = db.Column(db.String(64), index=True, unique=False)
+    student_courses = db.Column(db.String(64), index=True, unique=False)
+    another_column = db.Column(db.String(64), index=True, unique=False)
     posts = db.relationship('Post', backref='author', lazy='dynamic') # lazy allows us to do operations a lot easier
     
 
@@ -22,7 +23,7 @@ class User(UserMixin, db.Model): # tables are made by making classes, inorder to
     def __repr__(self):                     # when you want to print out the user
         return '<User {}>'.format(self.username)    
 
-class Post(db.Model):
+class Post(db.Model):  # how do we use this?
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(256))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
