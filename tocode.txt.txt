@@ -15,3 +15,6 @@
 
 	3.4 make the databse receive post by user:
 		.does adding the metho[get post] to routes.py do anything?
+
+4. going to find other useres with similar course:
+		

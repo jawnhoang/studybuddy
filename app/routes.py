@@ -23,7 +23,8 @@ def index():
     update_course.student_courses = form.student_courses.data
     db.session.commit()
     flash('Looking for students with the same course')
-    return render_template('index.html', title='User_Home',form=form )
+    found_buddy = User.query.filter_by(student_courses=update_course.student_courses)
+    return render_template('index.html', title='User_Home',form=form , found_buddy=found_buddy)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

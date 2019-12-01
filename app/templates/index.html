@@ -14,7 +14,12 @@
 <p id="student_course">
      {{ form.student_courses.label }}<br>
      {{ form.student_courses(size=32) }}{{ form.submit() }}
-
+     {% for buddy in found_buddy %}
+        <li>{{ buddy.id }},{{ buddy.username }}, {{ buddy.student_courses }} </li>
+        {% endfor %}
 </p>  
 </form>
+
+
+
 {% endblock %}
