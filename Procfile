@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi
+web: python study_buddy.py
