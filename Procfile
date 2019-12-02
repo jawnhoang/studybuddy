@@ -1,1 +1,1 @@
-web: python study_buddy.py
+web: gunicorn study_buddy:app
